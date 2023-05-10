@@ -1,23 +1,23 @@
-import { useRef } from 'react';
-import styles from './dropdown.module.css';
-import { useOutsideClickEvent } from '@/hooks/useOutsideClickEvent';
+import { useRef } from 'react'
+import styles from './dropdown.module.css'
+import { useOutsideClickEvent } from '@/hooks/useOutsideClickEvent'
 
 interface Props {
-  listItems: string[];
-  displayDropdown: boolean;
-  handleSelectItem: (event: React.MouseEvent<HTMLLIElement>) => void;
-  setDisplayDropdown: (arg: boolean) => void;
+  listItems: string[]
+  displayDropdown: boolean
+  handleSelectItem: (event: React.MouseEvent<HTMLLIElement>) => void
+  setDisplayDropdown: (arg: boolean) => void
 }
 
 export function DropdownMenu({
   displayDropdown,
   listItems,
   handleSelectItem,
-  setDisplayDropdown
+  setDisplayDropdown,
 }: Props) {
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
-  useOutsideClickEvent(dropdownRef, setDisplayDropdown);
+  useOutsideClickEvent(dropdownRef, setDisplayDropdown)
 
   return (
     <div
@@ -33,7 +33,7 @@ export function DropdownMenu({
               ? styles.dropdownItemSerif
               : item === 'Mono'
               ? styles.dropdownItemMono
-              : styles.dropdownItemSans;
+              : styles.dropdownItemSans
 
           return (
             <li
@@ -43,9 +43,9 @@ export function DropdownMenu({
             >
               {item}
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
+  )
 }

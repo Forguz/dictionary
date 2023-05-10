@@ -1,25 +1,25 @@
-'use client';
-import React, { useRef, useState } from 'react';
-import Image from 'next/image';
+'use client'
+import React, { useState } from 'react'
+import Image from 'next/image'
 
-import styles from './select.module.css';
-import { DropdownMenu } from './DropdownMenu';
-const listItems = ['Sans serif', 'Serif', 'Mono'];
+import styles from './select.module.css'
+import { DropdownMenu } from './DropdownMenu'
+const listItems = ['Sans serif', 'Serif', 'Mono']
 
 export function Select() {
   const [selectedValue, setSelectedValue] = useState<string | number>(
     listItems[0]
-  );
+  )
 
-  const [displayDropdown, setDisplayDropdown] = useState(false);
+  const [displayDropdown, setDisplayDropdown] = useState(false)
 
   function handleButtonClick() {
-    setDisplayDropdown(!displayDropdown);
+    setDisplayDropdown(!displayDropdown)
   }
 
   function handleSelectItem(event: React.MouseEvent<HTMLLIElement>) {
-    const parsedValue = event.currentTarget.innerHTML;
-    setSelectedValue(parsedValue);
+    const parsedValue = event.currentTarget.innerHTML
+    setSelectedValue(parsedValue)
   }
 
   return (
@@ -31,10 +31,10 @@ export function Select() {
       >
         {selectedValue}
         <Image
-          src='/chevron_down.svg'
+          src="/chevron_down.svg"
           width={16}
           height={8}
-          alt='Chevron Down'
+          alt="Chevron Down"
         />
       </button>
       <DropdownMenu
@@ -44,5 +44,5 @@ export function Select() {
         handleSelectItem={handleSelectItem}
       />
     </div>
-  );
+  )
 }
