@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.customSelect {
+  display: none;
+}
+
+.labelButton {
+  background-color: var(--background-color);
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.labelButton > img {
+  margin-left: 16px;
+}

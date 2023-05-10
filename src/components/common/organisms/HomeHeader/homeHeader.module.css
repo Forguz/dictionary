@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.container > div:first-of-type {
+  flex: 1;
+}
+
+.container > input[type="checkbox"] {
+  margin-left: 6px;
+}
+
+.container > label {
+  margin-right: 16px;
+}

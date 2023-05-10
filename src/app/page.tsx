@@ -1,95 +1,74 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.css';
+import { HomeHeader } from '@/components/common/organisms/HomeHeader';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+      {/* header | icon - font - theme */}
+      <HomeHeader />
+      {/* search */}
+      <div>
+        <input type='search' name='' id='' />
+      </div>
+      {/* title | word | play button*/}
+      <div>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <h1>Keyboard</h1>
+          <p>/ˈkiːbɔːd/</p>
         </div>
+        <button>play</button>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* word type */}
+      <div>
+        <b>noun</b>
+        <hr />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
+      {/* list of meanings */}
+      <div>
+        <h3>Meaning</h3>
+        <ul>
+          <li>
+            (etc.) A set of keys used to operate a typewriter, computer etc.
+          </li>
+          <li>
+            A component of many instruments including the piano, organ, and
+            harpsichord consisting of usually black and white keys that cause
+            different tones to be produced when struck.
+          </li>
+          <li>
+            A device with keys of a musical keyboard, used to control electronic
+            sound-producing devices which may be built into or separate from the
+            keyboard device.
+          </li>
+        </ul>
+      </div>
+      {/* Synonyms */}
+      <div>
+        <h4>Synonyms</h4>
+        <b>eletronic keyboards</b>
+      </div>
+      {/* verb */}
+      <div>
+        <b>verb</b>
+        <hr />
+      </div>
+      {/* meaning list */}
+      <div>
+        <h3>Meaning</h3>
+        <ul>
+          <li>
+            To type on a computer keyboard.
+            <span>“Keyboarding is the part of this job I hate the most.”</span>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <h3>Source</h3>
+        <a href='https://en.wiktionary.org/wiki/keyboard'>
+          https://en.wiktionary.org/wiki/keyboard
         </a>
       </div>
     </main>
-  )
+  );
 }
