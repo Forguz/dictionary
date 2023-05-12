@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Select } from '@/components/common/atoms/Select'
@@ -9,9 +9,19 @@ import { VerticalDivider } from '@/components/common/atoms/VerticalDivider'
 import styles from './homeHeader.module.css'
 import { Organism } from '@/types/components'
 import { Search } from '../../atoms/Search'
+import { useTheme } from '@/context/theme.context'
 
 export function HomeHeader(): Organism {
   const [darkMode, setDarkMode] = useState(false)
+  const { setTheme } = useTheme()
+
+  useEffect(() => {
+    if (darkMode) {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
+  }, [darkMode, setTheme])
 
   function handleToggleDarkMode() {
     setDarkMode((prevDarkMode) => !prevDarkMode)
