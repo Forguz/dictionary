@@ -1,7 +1,6 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import * as api from '@/services/api'
 
 import { Select } from '@/components/common/atoms/Select'
 import { Switch } from '@/components/common/atoms/Switch'
@@ -13,18 +12,6 @@ import { Search } from '../../atoms/Search'
 
 export function HomeHeader(): Organism {
   const [darkMode, setDarkMode] = useState(false)
-
-  const searchRef = useRef<HTMLInputElement>(null)
-
-  async function onSearch() {
-    if (searchRef.current) {
-      const searchedWord = searchRef.current.value
-      const result = await api.get(searchedWord)
-      console.log(result)
-    } else {
-      throw new Error('Internal error')
-    }
-  }
 
   function handleToggleDarkMode() {
     setDarkMode((prevDarkMode) => !prevDarkMode)
@@ -44,17 +31,15 @@ export function HomeHeader(): Organism {
         <Select />
         <VerticalDivider />
         <Switch isOn={darkMode} handleToggle={handleToggleDarkMode} />
-        <div>
-          <Image
-            src="/iconoir_half-moon.svg"
-            width={20}
-            height={20}
-            alt="dark mode"
-          />
-        </div>
+        <Image
+          src="/iconoir_half-moon.svg"
+          width={20}
+          height={20}
+          alt="dark mode"
+        />
       </div>
       <div className={styles.searchBox}>
-        <Search onSearch={onSearch} inputRef={searchRef} />
+        <Search />
       </div>
     </header>
   )

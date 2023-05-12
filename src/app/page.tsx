@@ -1,16 +1,18 @@
+import { NotFound } from '@/components/common/atoms/NotFound'
 import styles from './page.module.css'
 
 import { DictionaryResult } from '@/components/common/templates/DictionaryResult'
 import { get } from '@/services/api'
-import { isDictionaryResponse } from '@/types/dictionary'
+import {
+  DictionaryResponseError,
+  isDictionaryResponse,
+} from '@/types/dictionary'
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  console.log(searchParams)
-
   if (searchParams.word && typeof searchParams.word === 'string') {
     const word = await get(searchParams.word)
     console.log(word)
@@ -22,9 +24,7 @@ export default async function Home({
         </main>
       )
     } else {
-      return <p>Not found</p>
+      return <NotFound {...(word as DictionaryResponseError)} />
     }
   }
-
-  return <p>Insert a valid word</p>
 }

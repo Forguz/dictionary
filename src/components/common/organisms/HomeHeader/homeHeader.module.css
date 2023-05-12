@@ -1,14 +1,15 @@
 .container {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-block-end: 24px;
   flex-direction: column;
 }
 
 .pageOptions {
   display: flex;
+  align-items: center;
   width: 100%;
-  margin-bottom: 24px;
+  margin-block-end: 24px;
 }
 
 .pageOptions div:first-child {
@@ -16,10 +17,10 @@
 }
 
 .pageOptions label {
-  margin-right: 16px;
+  margin-inline-end: 12px;
 }
 
 .searchBox {
   width: 100%;
-  margin-bottom: 24px;
+  margin-block-end: 24px;
 }

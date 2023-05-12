@@ -2,6 +2,8 @@ import { HomeHeader } from '@/components/common/organisms/HomeHeader'
 import './globals.css'
 
 import { Inter, Inconsolata, Lora } from 'next/font/google'
+import { Suspense } from 'react'
+import { Loading } from '@/components/common/atoms/Loading'
 
 export const inter = Inter({
   weight: ['400', '700'],
@@ -45,8 +47,12 @@ export default function RootLayout({
       lang="en"
     >
       <body>
-        <HomeHeader />
-        {children}
+        <Suspense fallback={<Loading width={64} height={64} />}>
+          <HomeHeader />
+        </Suspense>
+        <Suspense fallback={<Loading width={64} height={64} />}>
+          {children}
+        </Suspense>
       </body>
     </html>
   )

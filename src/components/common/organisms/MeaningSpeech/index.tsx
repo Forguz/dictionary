@@ -3,6 +3,7 @@ import styles from './meaningSpeech.module.css'
 import PartOfSpeech from '../../atoms/PartOfSpeech'
 import { Meaning } from '@/types/dictionary'
 import { Organism } from '@/types/components'
+import Link from 'next/link'
 
 interface Props {
   meaning: Meaning
@@ -17,7 +18,20 @@ export function MeaningSpeech({ meaning }: Props): Organism {
       {!!meaning.synonyms.length && (
         <div className={styles.synonymsBox}>
           <h4>Synonyms</h4>
-          <b>{meaning.synonyms.map((synonym) => synonym + ' ')}</b>
+          {meaning.synonyms.map((synonym) => (
+            <>
+              <Link
+                key={synonym}
+                href={{
+                  pathname: '/',
+                  query: { word: synonym },
+                }}
+                replace
+              >
+                {synonym}
+              </Link>
+            </>
+          ))}
         </div>
       )}
     </>

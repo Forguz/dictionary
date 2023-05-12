@@ -11,6 +11,15 @@
   margin-right: 24px;
 }
 
-.synonymsBox b {
+.synonymsBox a {
   color: var(--accent-color);
+  font-weight: 700;
+}
+
+.synonymsBox a:hover {
+  text-decoration-line: underline;
+}
+
+.synonymsBox a + a {
+  margin-left: 6px;
 }

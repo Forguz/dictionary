@@ -1,0 +1,18 @@
+.container {
+  text-align: center;
+}
+
+.container p {
+  color: #757575;
+}
+
+.emoji {
+  font-size: 4.8rem;
+  margin-block-end: 24px;
+  display: block;
+}
+
+.title {
+  margin-block-end: 2.4rem;
+  color: #2d2d2d;
+}

@@ -28,7 +28,7 @@ export interface DictionaryResponse {
 export function isDictionaryResponse(
   value: DictionaryResponse | unknown
 ): value is DictionaryResponse {
-  return (value as DictionaryResponse).phonetic !== undefined
+  return (value as DictionaryResponse).word !== undefined
 }
 
 export interface DictionaryResponseError {
