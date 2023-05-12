@@ -57,7 +57,7 @@ export default function Home() {
       {/* list of meanings */}
       <div>
         <h4>Meaning</h4>
-        <List customClassName={styles.listItems} items={temporaryListItems} />
+        <List className={styles.listItems} items={temporaryListItems} />
       </div>
       {/* Synonyms */}
       <div>

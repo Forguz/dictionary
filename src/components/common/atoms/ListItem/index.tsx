@@ -6,5 +6,7 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
 }
 
 export function ListItem({ text, className }: Props) {
+  const finalStyle = !className ? style.li : `${style.li} ${className}`
+
   return <li className={finalStyle}>{text}</li>
 }
