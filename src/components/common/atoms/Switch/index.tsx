@@ -1,25 +1,26 @@
 'use client'
 
-import styles from './switch.module.css';
+import styles from './switch.module.css'
+import { ChangeEvent } from 'react'
 
 interface Props {
-  isOn: boolean;
-  handleToggle: (args?: any) => void;
+  isOn: boolean
+  handleToggle: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Switch({isOn, handleToggle}: Props) {
+export function Switch({ isOn, handleToggle }: Props) {
   return (
     <>
       <input
-        id='react-switch'
+        id="react-switch"
         className={styles.switch}
-        type='checkbox'
+        type="checkbox"
         checked={isOn}
         onChange={handleToggle}
       ></input>
-      <label className={styles.switchLabel} htmlFor='react-switch'>
+      <label className={styles.switchLabel} htmlFor="react-switch">
         <span className={styles.switchButton} />
       </label>
     </>
-  );
+  )
 }

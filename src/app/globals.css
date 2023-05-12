@@ -32,7 +32,24 @@ body {
 body {
   color: var(--primary-font-color);
   background: var(--background-color);
-  font-size: 1.6em;
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #757575;
 }
 
 button {

@@ -1,0 +1,11 @@
+.li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+}

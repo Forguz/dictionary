@@ -3,3 +3,26 @@
   max-width: var(--max-width);
   padding: 24px;
 }
+
+.searchBox {
+  margin-bottom: 24px;
+}
+
+.wordBox {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.wordBox > div {
+  flex: 1;
+}
+
+.phonetic {
+  font-size: 1.8rem;
+  line-height: 1.33;
+  color: var(--accent-color);
+}
+
+.listItems {
+  margin-top: 18px;
+}

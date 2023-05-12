@@ -1,6 +1,6 @@
 import './globals.css'
 
-import { Inter, Inconsolata, Lora } from 'next/font/google';
+import { Inter, Inconsolata, Lora } from 'next/font/google'
 
 export const inter = Inter({
   weight: ['400', '700'],
@@ -8,7 +8,8 @@ export const inter = Inter({
   variable: '--font-inter',
   fallback: ['Helvetica', 'sans-serif'],
   subsets: ['latin'],
-});
+  style: ['normal'],
+})
 
 export const inconsolata = Inconsolata({
   weight: ['400', '700'],
@@ -16,7 +17,7 @@ export const inconsolata = Inconsolata({
   variable: '--font-inconsolata',
   fallback: ['Courier New', 'Courier', 'monospace'],
   subsets: ['latin'],
-});
+})
 
 export const lora = Lora({
   weight: ['400', '700'],
@@ -24,8 +25,8 @@ export const lora = Lora({
   variable: '--font-lora',
   fallback: ['Times New Roman', 'Times', 'serif'],
   subsets: ['latin'],
-});
-
+  style: ['normal', 'italic'],
+})
 
 export const metadata = {
   title: 'Dictionary',
@@ -38,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${inter.variable} ${inconsolata.variable} ${lora.variable}`} lang="en">
+    <html
+      className={`${inter.variable} ${inconsolata.variable} ${lora.variable}`}
+      lang="en"
+    >
       <body>{children}</body>
     </html>
   )
