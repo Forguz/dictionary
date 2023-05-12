@@ -1,5 +1,6 @@
 'use client'
 
+import { Atom } from '@/types/components'
 import styles from './switch.module.css'
 import { ChangeEvent } from 'react'
 
@@ -8,7 +9,7 @@ interface Props {
   handleToggle: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Switch({ isOn, handleToggle }: Props) {
+export function Switch({ isOn, handleToggle }: Props): Atom {
   return (
     <>
       <input

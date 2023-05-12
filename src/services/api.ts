@@ -1,7 +1,9 @@
 const url = 'https://api.dictionaryapi.dev/api/v2/entries/en'
-import { DictionaryResponse } from '@/types/dicitonary'
+import { DictionaryResponse, DictionaryResponseError } from '@/types/dictionary'
 
-export async function get(word: string): Promise<DictionaryResponse> {
+export async function get(
+  word: string
+): Promise<DictionaryResponse[] | DictionaryResponseError> {
   try {
     const response = await fetch(`${url}/${word}`)
     return response.json()

@@ -4,9 +4,10 @@ import Image from 'next/image'
 
 import styles from './select.module.css'
 import { DropdownMenu } from './DropdownMenu'
+import { Atom } from '@/types/components'
 const listItems = ['Sans serif', 'Serif', 'Mono']
 
-export function Select() {
+export function Select(): Atom {
   const [selectedValue, setSelectedValue] = useState<string | number>(
     listItems[0]
   )

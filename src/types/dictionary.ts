@@ -24,3 +24,15 @@ export interface DictionaryResponse {
   sourceUrls: string[]
   word: string
 }
+
+export function isDictionaryResponse(
+  value: DictionaryResponse | unknown
+): value is DictionaryResponse {
+  return (value as DictionaryResponse).phonetic !== undefined
+}
+
+export interface DictionaryResponseError {
+  title: string
+  message: string
+  resolution: string
+}

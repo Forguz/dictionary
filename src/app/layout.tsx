@@ -1,3 +1,4 @@
+import { HomeHeader } from '@/components/common/organisms/HomeHeader'
 import './globals.css'
 
 import { Inter, Inconsolata, Lora } from 'next/font/google'
@@ -43,7 +44,10 @@ export default function RootLayout({
       className={`${inter.variable} ${inconsolata.variable} ${lora.variable}`}
       lang="en"
     >
-      <body>{children}</body>
+      <body>
+        <HomeHeader />
+        {children}
+      </body>
     </html>
   )
 }

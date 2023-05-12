@@ -2,16 +2,24 @@
   display: flex;
   align-items: center;
   margin-bottom: 24px;
+  flex-direction: column;
 }
 
-.container > div:first-of-type {
+.pageOptions {
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.pageOptions div:first-child {
   flex: 1;
 }
 
-.container > input[type="checkbox"] {
-  margin-left: 6px;
+.pageOptions label {
+  margin-right: 16px;
 }
 
-.container > label {
-  margin-right: 16px;
+.searchBox {
+  width: 100%;
+  margin-bottom: 24px;
 }

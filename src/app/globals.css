@@ -33,6 +33,7 @@ body {
   color: var(--primary-font-color);
   background: var(--background-color);
   font-size: 1.4em;
+  padding: 24px;
 }
 
 p {
