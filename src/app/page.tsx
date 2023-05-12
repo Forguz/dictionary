@@ -8,6 +8,7 @@ import * as api from '@/services/api'
 import { PlayButton } from '@/components/common/atoms/PlayButton'
 import PartOfSpeech from '@/components/common/atoms/PartOfSpeech'
 import { List } from '@/components/common/molecules/List'
+import { MeaningSpeech } from '@/components/common/organisms/MeaningSpeech'
 
 export default function Home() {
   const searchRef = useRef<HTMLInputElement>(null)
@@ -52,23 +53,9 @@ export default function Home() {
         </div>
         <PlayButton onClick={playClick} />
       </div>
-      {/* word type */}
-      <PartOfSpeech>noun</PartOfSpeech>
-      {/* list of meanings */}
-      <div>
-        <h4>Meaning</h4>
-        <List className={styles.listItems} items={temporaryListItems} />
-      </div>
-      {/* Synonyms */}
-      <div>
-        <h4>Synonyms</h4>
-        <b>eletronic keyboards</b>
-      </div>
+      <MeaningSpeech />
       {/* verb */}
-      <div>
-        <b>verb</b>
-        <hr />
-      </div>
+      <PartOfSpeech>verb</PartOfSpeech>
       {/* meaning list */}
       <div>
         <h4>Meaning</h4>

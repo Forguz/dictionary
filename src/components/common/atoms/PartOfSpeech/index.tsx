@@ -1,7 +1,8 @@
-import { ReactNode } from 'react'
+import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './partOfSpeech.module.css'
 
-interface Props {
+interface Props
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   children: ReactNode
 }
 

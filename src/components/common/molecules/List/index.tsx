@@ -16,7 +16,7 @@ export function List({ items, className }: Props) {
   return (
     <ul className={finalStyle}>
       {items.map((item) => (
-        <ListItem key={item} text={item} />
+        <ListItem className={style.li} key={item} text={item} />
       ))}
     </ul>
   )

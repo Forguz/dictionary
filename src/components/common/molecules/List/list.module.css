@@ -1,0 +1,7 @@
+.ul {
+  margin-bottom: 24px;
+}
+
+.li + li {
+  margin-top: 15px;
+}
