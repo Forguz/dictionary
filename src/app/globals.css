@@ -3,12 +3,31 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-lora);
 
+  /* backgrounds */
   --background-color: #fff;
+  --search-background-color: #f4f4f4;
+  --divider-color: #e9e9e9;
+
+  /* font-colors */
   --primary-font-color: #2d2d2d;
   --secondary-font-color: #757575;
+
+  /* accent */
   --accent-color: #a445ed;
+  --error-color: #ff5252;
 
   --max-width: 737px;
+}
+
+[data-theme='dark'] {
+  /* backgrounds */
+  --background-color: #050505;
+  --search-background-color: #1f1f1f;
+  --divider-color: #3a3a3a;
+
+  /* fonts */
+  --primary-font-color: #fff;
+  --secondary-font-color: #757575;
 }
 
 * {
@@ -50,7 +69,7 @@ h4 {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #757575;
+  color: var(--secondary-font-color);
 }
 
 button {

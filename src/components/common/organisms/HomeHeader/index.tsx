@@ -13,15 +13,15 @@ import { useTheme } from '@/context/theme.context'
 
 export function HomeHeader(): Organism {
   const [darkMode, setDarkMode] = useState(false)
-  const { setTheme } = useTheme()
+  const { changeTheme } = useTheme()
 
   useEffect(() => {
     if (darkMode) {
-      setTheme('dark')
+      changeTheme('dark')
     } else {
-      setTheme('light')
+      changeTheme('light')
     }
-  }, [darkMode, setTheme])
+  }, [darkMode, changeTheme])
 
   function handleToggleDarkMode() {
     setDarkMode((prevDarkMode) => !prevDarkMode)

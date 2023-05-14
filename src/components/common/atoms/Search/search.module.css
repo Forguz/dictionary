@@ -1,9 +1,26 @@
 .container {
   display: flex;
   border-radius: 16px;
-  background-color: #f4f4f4;
+  background-color: var(--search-background-color);
   height: 48px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.container:has(> input:focus) {
+  border-color: var(--accent-color);
+}
+
+.containerError {
+  border-color: var(--error-color);
+}
+
+.containerError::after {
+  content: 'Whoops, can’t be empty…';
+  color: var(--error-color);
+  position: absolute;
+  margin-top: calc(48px + 8px);
 }
 
 .container input {
@@ -13,10 +30,11 @@
   flex: 1;
   padding: 16px 24px;
   font-size: 16px;
+  color: var(--primary-font-color);
 }
 
 .container input::placeholder {
-  color: #2d2d2d;
+  color: var(--primary-font-color);
   opacity: 0.25;
 }
 

@@ -8,22 +8,30 @@ import { RotatingLines } from 'react-loader-spinner'
 export function Search(): Atom {
   const inputRef = useRef<HTMLInputElement>(null)
   const [searching, setSearching] = useState<boolean>(false)
+  const [hasError, setHasError] = useState<boolean>(false)
   const Router = useRouter()
 
   async function handleSearch() {
-    setSearching(true)
     if (inputRef.current) {
-      const searchedWord = inputRef.current.value
-      Router.push('/?word=' + searchedWord)
-      setTimeout(() => setSearching(false), 1000)
-    } else {
-      setTimeout(() => setSearching(false), 1000)
-      throw new Error('Internal error')
+      if (inputRef.current.value) {
+        setSearching(true)
+        setHasError(false)
+        const searchedWord = inputRef.current.value
+        Router.push('/?word=' + searchedWord)
+        setTimeout(() => setSearching(false), 1000)
+      } else {
+        setTimeout(() => setSearching(false), 1000)
+        setHasError(true)
+      }
     }
   }
 
+  const classes = hasError
+    ? `${styles.container} ${styles.containerError}`
+    : styles.container
+
   return (
-    <div className={styles.container}>
+    <div className={classes}>
       <input ref={inputRef} placeholder="Search for any word…" type="text" />
       <button onClick={handleSearch}>
         {searching ? (

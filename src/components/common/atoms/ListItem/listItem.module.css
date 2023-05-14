@@ -16,6 +16,6 @@
 }
 
 .li span {
-  color: #757575;
+  color: var(--secondary-font-color);
   margin-top: 14px;
 }
