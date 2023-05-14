@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { KeyboardEvent, useRef, useState } from 'react'
 import { Search as SearchIcon } from 'iconoir-react'
 import styles from './search.module.css'
 import { Atom } from '@/types/components'
@@ -26,12 +26,18 @@ export function Search(): Atom {
     }
   }
 
+  function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === 'Enter') {
+      handleSearch()
+    }
+  }
+
   const classes = hasError
     ? `${styles.container} ${styles.containerError}`
     : styles.container
 
   return (
-    <div className={classes}>
+    <div onKeyDown={handleKeyDown} className={classes}>
       <input ref={inputRef} placeholder="Search for any word…" type="text" />
       <button onClick={handleSearch}>
         {searching ? (

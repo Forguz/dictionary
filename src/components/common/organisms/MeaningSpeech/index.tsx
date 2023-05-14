@@ -18,10 +18,10 @@ export function MeaningSpeech({ meaning }: Props): Organism {
       {!!meaning.synonyms.length && (
         <div className={styles.synonymsBox}>
           <h4>Synonyms</h4>
-          {meaning.synonyms.map((synonym) => (
-            <>
+          <div>
+            {meaning.synonyms.map((synonym, index) => (
               <Link
-                key={synonym}
+                key={`${index}_${synonym}`}
                 href={{
                   pathname: '/',
                   query: { word: synonym },
@@ -30,8 +30,8 @@ export function MeaningSpeech({ meaning }: Props): Organism {
               >
                 {synonym}
               </Link>
-            </>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </>

@@ -5,6 +5,7 @@
 .synonymsBox {
   display: flex;
   margin-bottom: 34px;
+  height: auto;
 }
 
 .synonymsBox h4 {
@@ -14,12 +15,10 @@
 .synonymsBox a {
   color: var(--accent-color);
   font-weight: 700;
+  float: left;
+  margin-right: 6px;
 }
 
 .synonymsBox a:hover {
-  text-decoration-line: underline;
-}
-
-.synonymsBox a + a {
-  margin-left: 6px;
+  text-decoration: underline;
 }

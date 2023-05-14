@@ -6,8 +6,28 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(164, 69, 237, 0.25);
+  transition: background-color 200ms ease;
 }
 
-.button > img {
+.button svg {
+  transition: color 200ms ease, fill 200ms ease;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+}
+
+.button:hover > svg {
+  fill: #fff;
+  color: #fff;
+}
+
+.button:hover > div > svg {
+  fill: #fff;
+}
+
+.button > svg {
   margin-left: 3px;
+  fill: var(--accent-color);
+  color: var(--accent-color);
 }

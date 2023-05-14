@@ -1,8 +1,8 @@
 import { MouseEvent } from 'react'
-import Image from 'next/image'
 import { Audio } from 'react-loader-spinner'
 import style from './playButton.module.css'
 import { Atom } from '@/types/components'
+import { Play } from 'iconoir-react'
 
 interface Props {
   onClick: (evt: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void
@@ -15,7 +15,7 @@ export function PlayButton({ isPlaying, onClick }: Props): Atom {
       {isPlaying ? (
         <Audio width={13} height={13} color="#a445ed" />
       ) : (
-        <Image src="/play.svg" width={13} height={13} alt="play" />
+        <Play width={16} height={16} />
       )}
     </button>
   )
