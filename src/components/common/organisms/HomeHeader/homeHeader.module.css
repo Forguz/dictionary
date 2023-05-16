@@ -47,6 +47,10 @@
     margin-block-end: 50px;
   }
 
+  .pageOptions label {
+    margin-inline-end: 20px;
+  }
+
   .pageOptions div:first-child > svg {
     width: 40px;
     height: 44px;

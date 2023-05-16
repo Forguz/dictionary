@@ -1,10 +1,10 @@
 .listItems {
-  margin-top: 18px;
+  margin-block-start: 18px;
 }
 
 .synonymsBox {
   display: flex;
-  margin-bottom: 34px;
+  margin-block-end: 34px;
   height: auto;
 }
 
@@ -22,4 +22,18 @@
 
 .synonymsBox a:hover {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .listItems {
+    margin-block-start: 26px;
+  }
+
+  .listItems:has(~ div > h3) {
+    margin-block-end: 40px;
+  }
+
+  .synonymsBox {
+    margin-block: 40px;
+  }
 }

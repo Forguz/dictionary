@@ -1,7 +1,7 @@
 .wordBox {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-block-end: 30px;
 }
 
 .wordBox > div {
@@ -18,6 +18,12 @@
   background-color: var(--divider-color);
   border: none;
   height: 1px;
-  margin-top: 8px;
-  margin-bottom: 24px;
+  margin-block-start: 8px;
+  margin-block-end: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .wordBox {
+    margin-block-end: 42px;
+  }
 }
