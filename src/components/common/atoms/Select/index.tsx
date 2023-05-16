@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 import Image from 'next/image'
 
 import { Atom } from '@/types/components'
@@ -16,8 +16,9 @@ export function Select(): Atom {
 
   const [displayDropdown, setDisplayDropdown] = useState(false)
 
-  function handleButtonClick() {
-    setDisplayDropdown(!displayDropdown)
+  function handleButtonClick(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault()
+    setDisplayDropdown((previousValue) => !previousValue)
   }
 
   function returnFontByValue(fontStyle: dropdownValues) {
@@ -34,11 +35,7 @@ export function Select(): Atom {
 
   return (
     <div className={styles.container}>
-      <button
-        onTouchStart={handleButtonClick}
-        onClick={handleButtonClick}
-        className={styles.labelButton}
-      >
+      <button onClick={handleButtonClick} className={styles.labelButton}>
         {selectedValue}
         <Image
           src="/chevron_down.svg"

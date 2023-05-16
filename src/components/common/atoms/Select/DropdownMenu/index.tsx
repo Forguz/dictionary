@@ -19,13 +19,12 @@ export function DropdownMenu({
 
   useOutsideClickEvent(dropdownRef, setDisplayDropdown)
 
+  const finalStyles = displayDropdown
+    ? `${styles.dropdownMenu} ${styles.showDropdownMenu}`
+    : styles.dropdownMenu
+
   return (
-    <div
-      ref={dropdownRef}
-      className={`${styles.dropdownMenu} ${
-        displayDropdown && styles.showDropdownMenu
-      }`}
-    >
+    <div ref={dropdownRef} className={finalStyles}>
       <ul className={styles.dropdownList}>
         {listItems.map((item) => {
           const fontFamily =

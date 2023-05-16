@@ -1,3 +1,4 @@
+export type ThemeOptions = 'light' | 'dark'
 export interface Theme {
-  changeTheme: (arg: 'light' | 'dark') => void
+  changeTheme: (arg: ThemeOptions) => void
 }

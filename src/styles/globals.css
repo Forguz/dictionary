@@ -1,4 +1,6 @@
 @import url('./search.css');
+@import url('./dropdownMenu.css');
+@import url('./homeHeader.css');
 
 :root {
   --font-mono: var(--font-inconsolata);

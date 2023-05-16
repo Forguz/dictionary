@@ -1,9 +1,9 @@
 :root {
   --dropdown-menu-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  --dropdown-background-color: var(--background-color);
 }
 
-[data-theme='dark'] {
-  :root {
-    --dropdown-menu-shadow: 0px 5px 30px #a445ed;
-  }
+html[data-theme='dark'] {
+  --dropdown-menu-shadow: 0px 5px 30px #a445ed;
+  --dropdown-background-color: #1f1f1f;
 }

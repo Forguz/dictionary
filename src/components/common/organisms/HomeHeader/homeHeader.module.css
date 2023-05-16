@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  margin-block-end: 24px;
+  margin-block-end: var(--header-container-block-end);
   flex-direction: column;
   max-width: var(--max-width);
   margin-inline: auto;
@@ -12,8 +12,14 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-block-end: 24px;
+  margin-block-end: var(--header-page-options-block-end);
   transition: margin 0.2s ease;
+}
+
+.pageOptions > svg {
+  width: 25px;
+  height: 25px;
+  color: var(--halfmoon-color);
 }
 
 .pageOptions div:first-child {
@@ -23,36 +29,17 @@
 }
 
 .pageOptions div:first-child > svg {
-  width: 32px;
-  height: 36px;
+  width: var(--header-book-width);
+  height: var(--header-book-height);
   color: var(--secondary-font-color);
   transition: width 0.2s ease, height 0.2s ease;
 }
 
 .pageOptions label {
-  margin-inline-end: 12px;
+  margin-inline-end: var(--header-page-options-label-inline-end);
 }
 
 .searchBox {
   width: 100%;
   margin-block-end: 24px;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    margin-block-end: 46px;
-  }
-
-  .pageOptions {
-    margin-block-end: 50px;
-  }
-
-  .pageOptions label {
-    margin-inline-end: 20px;
-  }
-
-  .pageOptions div:first-child > svg {
-    width: 40px;
-    height: 44px;
-  }
 }

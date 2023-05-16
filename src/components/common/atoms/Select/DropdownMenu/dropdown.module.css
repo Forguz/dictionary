@@ -1,7 +1,7 @@
 .dropdownMenu {
   position: absolute;
   margin-top: 20px;
-  background-color: var(--background-color);
+  background-color: var(--dropdown-background-color);
   display: none;
   width: 140px;
   box-shadow: var(--dropdown-menu-shadow);

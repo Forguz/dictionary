@@ -1,0 +1,23 @@
+:root {
+  --halfmoon-color: var(--secondary-font-color);
+
+  --header-container-block-end: 24px;
+  --header-page-options-block-end: 24px;
+  --header-page-options-label-inline-end: 12px;
+  --header-book-width: 32px;
+  --header-book-height: 36px;
+}
+
+[data-theme='dark'] {
+  --halfmoon-color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --header-container-block-end: 46px;
+    --header-page-options-block-end: 50px;
+    --header-page-options-label-inline-end: 20px;
+    --header-book-width: 40px;
+    --header-book-height: 44px;
+  }
+}

@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import { Book } from 'iconoir-react'
+import { Book, HalfMoon } from 'iconoir-react'
 
 import { Select } from '@/components/common/atoms/Select'
 import { Switch } from '@/components/common/atoms/Switch'
@@ -11,17 +10,21 @@ import styles from './homeHeader.module.css'
 import { Organism } from '@/types/components'
 import { Search } from '../../atoms/Search'
 import { useTheme } from '@/context/theme.context'
+import { ThemeOptions } from '@/types/contexts'
 
 export function HomeHeader(): Organism {
-  const [darkMode, setDarkMode] = useState(false)
+  const themeLocalValue = localStorage.getItem('@forguz-dictionary/theme') as
+    | ThemeOptions
+    | undefined
+
+  const initialValue =
+    themeLocalValue && themeLocalValue === 'dark' ? true : false
+
+  const [darkMode, setDarkMode] = useState(initialValue)
   const { changeTheme } = useTheme()
 
   useEffect(() => {
-    if (darkMode) {
-      changeTheme('dark')
-    } else {
-      changeTheme('light')
-    }
+    darkMode ? changeTheme('dark') : changeTheme('light')
   }, [darkMode, changeTheme])
 
   function handleToggleDarkMode() {
@@ -37,12 +40,7 @@ export function HomeHeader(): Organism {
         <Select />
         <VerticalDivider />
         <Switch isOn={darkMode} handleToggle={handleToggleDarkMode} />
-        <Image
-          src="/iconoir_half-moon.svg"
-          width={20}
-          height={20}
-          alt="dark mode"
-        />
+        <HalfMoon />
       </div>
       <div className={styles.searchBox}>
         <Search />
