@@ -6,11 +6,29 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(164, 69, 237, 0.25);
-  transition: background-color 200ms ease;
+  transition: background-color 200ms ease, width 0.2s ease, height 0.2s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    width: 75px;
+    height: 75px;
+  }
+
+  .button svg {
+    height: 21px;
+    width: 21px;
+  }
+
+  .button > svg {
+    height: 26px;
+    width: 26px;
+  }
 }
 
 .button svg {
-  transition: color 200ms ease, fill 200ms ease;
+  transition: color 200ms ease, fill 200ms ease, width 200ms ease,
+    height 200ms ease;
 }
 
 .button:hover {

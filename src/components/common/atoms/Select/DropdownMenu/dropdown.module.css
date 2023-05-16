@@ -4,7 +4,7 @@
   background-color: var(--background-color);
   display: none;
   width: 140px;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--dropdown-menu-shadow);
   border-radius: 16px;
   padding-block-start: 16px;
   padding-block-end: 16px;
@@ -41,4 +41,16 @@
 }
 .dropdownItemMono {
   font-family: var(--font-mono);
+}
+
+@media screen and (min-width: 768px) {
+  .dropdownMenu {
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+    width: 180px;
+  }
+  .dropdownItem {
+    font-size: 1.8rem;
+    padding-inline-start: 24px;
+  }
 }

@@ -9,8 +9,8 @@
 }
 
 .phonetic {
-  font-size: 1.8rem;
-  line-height: 1.33;
+  font-size: var(--part-of-speech-size);
+  line-height: var(--part-of-speech-line-height);
   color: var(--accent-color);
 }
 

@@ -2,8 +2,7 @@
   display: flex;
   border-radius: 16px;
   background-color: var(--search-background-color);
-  height: 48px;
-  /* overflow: hidden; */
+  height: var(--search-container-height);
   border: 1px solid transparent;
   position: relative;
 }
@@ -13,6 +12,7 @@
 }
 
 .containerError {
+  --container-height: 48px;
   border-color: var(--error-color);
 }
 
@@ -20,7 +20,7 @@
   content: 'Whoops, can’t be empty…';
   color: var(--error-color);
   position: absolute;
-  margin-top: calc(48px + 8px);
+  margin-top: calc(var(--search-container-height) + 8px);
 }
 
 .container input {
@@ -29,7 +29,7 @@
   font-weight: 700;
   flex: 1;
   padding: 16px 24px;
-  font-size: 16px;
+  font-size: var(--h4-size);
   color: var(--primary-font-color);
 }
 
@@ -44,6 +44,14 @@
 }
 
 .container button {
-  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
   background-color: transparent;
+}
+
+.container button svg {
+  width: 20px;
+  height: 20px;
 }

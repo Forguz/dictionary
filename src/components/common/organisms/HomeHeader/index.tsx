@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Book } from 'iconoir-react'
 
 import { Select } from '@/components/common/atoms/Select'
 import { Switch } from '@/components/common/atoms/Switch'
@@ -31,12 +32,7 @@ export function HomeHeader(): Organism {
     <header className={styles.container}>
       <div className={styles.pageOptions}>
         <div>
-          <Image
-            src="/iconoir_book.svg"
-            width={28}
-            height={32}
-            alt="book icon"
-          />
+          <Book />
         </div>
         <Select />
         <VerticalDivider />

@@ -1,0 +1,9 @@
+:root {
+  --dropdown-menu-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  :root {
+    --dropdown-menu-shadow: 0px 5px 30px #a445ed;
+  }
+}

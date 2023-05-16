@@ -7,7 +7,8 @@
 .container h3 {
   font-style: italic;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: var(--part-of-speech-size);
+  line-height: var(--part-of-speech-line-height);
   margin-right: 16px;
 }
 

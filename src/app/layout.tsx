@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 import { Loading } from '@/components/common/atoms/Loading'
 import { HomeHeader } from '@/components/common/organisms/HomeHeader'
 import { ThemeProvider } from '@/context/theme.context'
-import './globals.css'
+import '@/styles/globals.css'
 
 export const inter = Inter({
   weight: ['400', '700'],

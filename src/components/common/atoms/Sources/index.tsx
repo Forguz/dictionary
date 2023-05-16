@@ -8,8 +8,8 @@ interface Props {
 
 export function Sources({ sources }: Props): Atom {
   return (
-    <>
-      <h4 className={styles.heading}>Source</h4>
+    <div className={styles.container}>
+      <h5 className={styles.heading}>Source</h5>
       <div>
         {sources.map((source) => (
           <a className={styles.link} target="_blank" key={source} href={source}>
@@ -17,6 +17,6 @@ export function Sources({ sources }: Props): Atom {
           </a>
         ))}
       </div>
-    </>
+    </div>
   )
 }

@@ -23,3 +23,9 @@
 .labelButton > img {
   margin-left: 16px;
 }
+
+@media screen and (min-width: 768px) {
+  .labelButton {
+    font-size: 1.8rem;
+  }
+}
