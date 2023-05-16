@@ -24,7 +24,11 @@ export default async function Home({
         </main>
       )
     } else {
-      return <NotFound {...(word as DictionaryResponseError)} />
+      return (
+        <main className={styles.main}>
+          <NotFound {...(word as DictionaryResponseError)} />
+        </main>
+      )
     }
   }
 }
