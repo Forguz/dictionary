@@ -7,7 +7,7 @@ interface Props
   children: ReactNode
 }
 
-export default function PartOfSpeech({ children }: Props): Atom {
+export function PartOfSpeech({ children }: Props): Atom {
   return (
     <div className={styles.container}>
       <h3>{children}</h3>

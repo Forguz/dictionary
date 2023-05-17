@@ -1,6 +1,6 @@
 import { List } from '../../molecules/List'
 import styles from './meaningSpeech.module.css'
-import PartOfSpeech from '../../atoms/PartOfSpeech'
+import { PartOfSpeech } from '../../atoms/PartOfSpeech'
 import { Meaning } from '@/types/dictionary'
 import { Organism } from '@/types/components'
 import Link from 'next/link'
