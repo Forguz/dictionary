@@ -1,0 +1,1 @@
+export const STORAGE = (key: string) => `@forguz-dictionary/${key}`;

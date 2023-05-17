@@ -1,10 +1,11 @@
 'use client'
-import React, { MouseEvent, useState } from 'react'
+import React, { MouseEvent, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Atom } from '@/types/components'
 import styles from './select.module.css'
 import { DropdownMenu } from './DropdownMenu'
+import { STORAGE } from '@/utils/constants'
 const listItems: dropdownValues[] = ['Sans serif', 'Serif', 'Mono']
 
 type dropdownValues = 'Sans serif' | 'Serif' | 'Mono'
@@ -13,8 +14,19 @@ export function Select(): Atom {
   const [selectedValue, setSelectedValue] = useState<dropdownValues>(
     listItems[0]
   )
-
   const [displayDropdown, setDisplayDropdown] = useState(false)
+
+  useEffect(() => {
+    const fontFromStorage: dropdownValues | null = localStorage.getItem(
+      STORAGE('font')
+    ) as dropdownValues | null
+
+    if (fontFromStorage) {
+      document.body.style.fontFamily = returnFontByValue(fontFromStorage)
+
+      setSelectedValue(fontFromStorage)
+    }
+  }, [])
 
   function handleButtonClick(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
@@ -30,6 +42,7 @@ export function Select(): Atom {
   function handleSelectItem(event: React.MouseEvent<HTMLLIElement>) {
     const parsedValue = event.currentTarget.innerHTML as dropdownValues
     setSelectedValue(parsedValue)
+    localStorage.setItem(STORAGE('font'), parsedValue)
     document.body.style.fontFamily = returnFontByValue(parsedValue)
   }
 

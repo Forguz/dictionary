@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Book, HalfMoon } from 'iconoir-react'
 
 import { Select } from '@/components/common/atoms/Select'
@@ -10,25 +10,22 @@ import styles from './homeHeader.module.css'
 import { Organism } from '@/types/components'
 import { Search } from '../../atoms/Search'
 import { useTheme } from '@/context/theme.context'
-import { ThemeOptions } from '@/types/contexts'
 
 export function HomeHeader(): Organism {
-  const themeLocalValue = localStorage.getItem('@forguz-dictionary/theme') as
-    | ThemeOptions
-    | undefined
-
-  const initialValue =
-    themeLocalValue && themeLocalValue === 'dark' ? true : false
-
-  const [darkMode, setDarkMode] = useState(initialValue)
-  const { changeTheme } = useTheme()
-
-  useEffect(() => {
-    darkMode ? changeTheme('dark') : changeTheme('light')
-  }, [darkMode, changeTheme])
+  const { theme, changeTheme } = useTheme()
+  const [darkMode, setDarkMode] = useState(
+    theme && theme === 'light' ? false : true
+  )
 
   function handleToggleDarkMode() {
-    setDarkMode((prevDarkMode) => !prevDarkMode)
+    setDarkMode((prevDarkMode) => {
+      if (!prevDarkMode) {
+        changeTheme('dark')
+      } else {
+        changeTheme('light')
+      }
+      return !prevDarkMode
+    })
   }
 
   return (

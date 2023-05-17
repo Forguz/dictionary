@@ -1,6 +1,7 @@
 'use client'
 
 import { Theme, ThemeOptions } from '@/types/contexts'
+import { STORAGE } from '@/utils/constants'
 import {
   ReactNode,
   createContext,
@@ -14,19 +15,19 @@ interface Props {
 }
 
 const defaultValue: Theme = {
+  theme: 'dark',
   changeTheme: () => {
     ;('')
   },
 }
 
 const ThemeContext = createContext<Theme>(defaultValue)
-const STORAGE_KEY = '@forguz-dictionary/theme'
 
 export function ThemeProvider({ children }: Props) {
   const [theme, setTheme] = useState<ThemeOptions | null>(null)
 
   useEffect(() => {
-    const savedValue = localStorage.getItem(STORAGE_KEY) as
+    const savedValue = localStorage.getItem(STORAGE('theme')) as
       | ThemeOptions
       | undefined
 
@@ -41,7 +42,7 @@ export function ThemeProvider({ children }: Props) {
   function changeTheme(newTheme: ThemeOptions) {
     document.documentElement.setAttribute('data-theme', newTheme)
     setTheme(newTheme)
-    localStorage.setItem(STORAGE_KEY, newTheme)
+    localStorage.setItem(STORAGE('theme'), newTheme)
   }
 
   const value = {

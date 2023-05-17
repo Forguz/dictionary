@@ -1,6 +1,9 @@
-import React, { RefObject, useEffect } from 'react';
+import React, { RefObject, useEffect } from 'react'
 
-export function useOutsideClickEvent(ref: RefObject<HTMLElement>, onClick: (arg: any) => void) {
+export function useOutsideClickEvent(
+  ref: RefObject<HTMLElement>,
+  onClick: (arg: boolean) => void
+) {
   useEffect(() => {
     function handleClickOutside(
       event: React.MouseEvent<HTMLElement, MouseEvent> | MouseEvent
@@ -9,9 +12,9 @@ export function useOutsideClickEvent(ref: RefObject<HTMLElement>, onClick: (arg:
         onClick(false)
       }
     }
-    document.addEventListener('mousedown', handleClickOutside, true);
+    document.addEventListener('mousedown', handleClickOutside, true)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside, true);
-    };
-  }, [ref, onClick]);
+      document.removeEventListener('mousedown', handleClickOutside, true)
+    }
+  }, [ref, onClick])
 }
