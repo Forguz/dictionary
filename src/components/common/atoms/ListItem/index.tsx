@@ -12,10 +12,10 @@ export function ListItem({ definition, example, className }: Props): Atom {
 
   return (
     <li className={finalStyle}>
-      <p>{definition}</p>
+      <p aria-label="definition">{definition}</p>
       {example && (
         <span>
-          <p>"{example}"</p>
+          <p aria-label="example">"{example}"</p>
         </span>
       )}
     </li>

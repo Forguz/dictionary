@@ -7,12 +7,12 @@ export function NotFound({
   resolution,
 }: DictionaryResponseError) {
   return (
-    <div className={styles.container}>
+    <section role="region" className={styles.container}>
       <span className={styles.emoji}>😕</span>
       <h3 className={styles.title}>{title}</h3>
       <p>
         {message} {resolution}
       </p>
-    </div>
+    </section>
   )
 }

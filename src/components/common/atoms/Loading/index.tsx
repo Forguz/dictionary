@@ -3,8 +3,8 @@ import styles from './loading.module.css'
 
 export function Loading(): Atom {
   return (
-    <div className={styles.container}>
-      <div className={styles.loader} />
+    <div aria-label="loading-container" className={styles.container}>
+      <div aria-label="loading-spinner" className={styles.loader} />
     </div>
   )
 }
