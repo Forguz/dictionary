@@ -26,4 +26,8 @@
   .wordBox {
     margin-block-end: 42px;
   }
+
+  .wordBox h1 {
+    margin-block-end: 4px;
+  }
 }

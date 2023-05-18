@@ -1,8 +1,11 @@
-import { KeyboardEvent, useRef, useState } from 'react'
+'use client'
+
+import { KeyboardEvent, useEffect, useRef, useState } from 'react'
 import { Search as SearchIcon } from 'iconoir-react'
+import { RotatingLines } from 'react-loader-spinner'
+import { useSearchParams } from 'next/navigation'
 import styles from './search.module.css'
 import { Atom } from '@/types/components'
-import { RotatingLines } from 'react-loader-spinner'
 
 interface Props {
   handleSearch: (word: string) => void
@@ -12,18 +15,36 @@ export function Search({ handleSearch }: Props): Atom {
   const inputRef = useRef<HTMLInputElement>(null)
   const [searching, setSearching] = useState<boolean>(false)
   const [hasError, setHasError] = useState<boolean>(false)
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    if (searchParams.get('word') !== getInputValue()) {
+      setInputValue('')
+    }
+  }, [searchParams])
 
   function onSearch() {
+    const inputValue = getInputValue()
+    if (inputValue) {
+      setHasError(false)
+      setSearching(true)
+      handleSearch(inputValue)
+      setTimeout(() => setSearching(false), 1000)
+    } else {
+      setTimeout(() => setSearching(false), 1000)
+      setHasError(true)
+    }
+  }
+
+  function getInputValue() {
     if (inputRef.current) {
-      if (inputRef.current.value) {
-        setHasError(false)
-        setSearching(true)
-        handleSearch(inputRef.current.value)
-        setTimeout(() => setSearching(false), 1000)
-      } else {
-        setTimeout(() => setSearching(false), 1000)
-        setHasError(true)
-      }
+      return inputRef.current.value
+    }
+  }
+
+  function setInputValue(value: string) {
+    if (inputRef.current) {
+      inputRef.current.value = value
     }
   }
 
