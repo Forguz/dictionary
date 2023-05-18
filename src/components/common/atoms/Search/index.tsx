@@ -59,7 +59,12 @@ export function Search({ handleSearch }: Props): Atom {
     : styles.container
 
   return (
-    <div onKeyDown={handleKeyDown} className={classes}>
+    <div
+      data-testid="search-container"
+      onKeyDown={handleKeyDown}
+      className={classes}
+      tabIndex={0}
+    >
       <input ref={inputRef} placeholder="Search for any word…" type="text" />
       <button onClick={onSearch}>
         {searching ? (
