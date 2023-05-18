@@ -10,12 +10,19 @@ import styles from './homeHeader.module.css'
 import { Organism } from '@/types/components'
 import { Search } from '../../atoms/Search'
 import { useTheme } from '@/context/theme.context'
+import { useRouter } from 'next/navigation'
 
 export function HomeHeader(): Organism {
   const { theme, changeTheme } = useTheme()
   const [darkMode, setDarkMode] = useState(
     theme && theme === 'light' ? false : true
   )
+
+  const Router = useRouter()
+
+  function handleSearch(searchedWord: string) {
+    Router.push('/?word=' + searchedWord)
+  }
 
   function handleToggleDarkMode() {
     setDarkMode((prevDarkMode) => {
@@ -40,7 +47,7 @@ export function HomeHeader(): Organism {
         <HalfMoon />
       </div>
       <div className={styles.searchBox}>
-        <Search />
+        <Search handleSearch={handleSearch} />
       </div>
     </header>
   )

@@ -15,7 +15,6 @@ export default async function Home({
 }) {
   if (searchParams.word && typeof searchParams.word === 'string') {
     const word = await get(searchParams.word)
-    console.log(word)
 
     if (Array.isArray(word) && isDictionaryResponse(word[0])) {
       return (

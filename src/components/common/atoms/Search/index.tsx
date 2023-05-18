@@ -2,22 +2,23 @@ import { KeyboardEvent, useRef, useState } from 'react'
 import { Search as SearchIcon } from 'iconoir-react'
 import styles from './search.module.css'
 import { Atom } from '@/types/components'
-import { useRouter } from 'next/navigation'
 import { RotatingLines } from 'react-loader-spinner'
 
-export function Search(): Atom {
+interface Props {
+  handleSearch: (word: string) => void
+}
+
+export function Search({ handleSearch }: Props): Atom {
   const inputRef = useRef<HTMLInputElement>(null)
   const [searching, setSearching] = useState<boolean>(false)
   const [hasError, setHasError] = useState<boolean>(false)
-  const Router = useRouter()
 
-  async function handleSearch() {
+  function onSearch() {
     if (inputRef.current) {
       if (inputRef.current.value) {
-        setSearching(true)
         setHasError(false)
-        const searchedWord = inputRef.current.value
-        Router.push('/?word=' + searchedWord)
+        setSearching(true)
+        handleSearch(inputRef.current.value)
         setTimeout(() => setSearching(false), 1000)
       } else {
         setTimeout(() => setSearching(false), 1000)
@@ -28,7 +29,7 @@ export function Search(): Atom {
 
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key === 'Enter') {
-      handleSearch()
+      onSearch()
     }
   }
 
@@ -39,7 +40,7 @@ export function Search(): Atom {
   return (
     <div onKeyDown={handleKeyDown} className={classes}>
       <input ref={inputRef} placeholder="Search for any word…" type="text" />
-      <button onClick={handleSearch}>
+      <button onClick={onSearch}>
         {searching ? (
           <RotatingLines
             strokeColor="#A445ED"
