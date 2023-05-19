@@ -24,7 +24,7 @@ export function DropdownMenu({
     : styles.dropdownMenu
 
   return (
-    <div ref={dropdownRef} className={finalStyles}>
+    <div data-testid="dropdown-container" ref={dropdownRef} className={finalStyles}>
       <ul className={styles.dropdownList}>
         {listItems.map((item) => {
           const fontFamily =

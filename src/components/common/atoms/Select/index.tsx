@@ -47,7 +47,7 @@ export function Select(): Atom {
   }
 
   return (
-    <div className={styles.container}>
+    <div data-testid="select-container" className={styles.container}>
       <button onClick={handleButtonClick} className={styles.labelButton}>
         {selectedValue}
         <Image
