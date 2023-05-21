@@ -19,7 +19,7 @@ export function Switch({ isOn, handleToggle }: Props): Atom {
         checked={isOn}
         onChange={handleToggle}
       ></input>
-      <label className={styles.switchLabel} htmlFor="react-switch">
+      <label data-testid="switch-label" className={styles.switchLabel} htmlFor="react-switch">
         <span className={styles.switchButton} />
       </label>
     </>
