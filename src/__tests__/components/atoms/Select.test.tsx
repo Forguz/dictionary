@@ -43,4 +43,14 @@ describe('Select', () => {
 
     expect(button.textContent).toEqual('Serif')
   })
+
+  it('shoud change body font when listItem is clicked', () => {
+    const { getAllByRole } = render(<Select />)
+
+    const listItems = getAllByRole('listitem')
+
+    fireEvent.click(listItems[1])
+
+    expect(document.body.style.fontFamily).toEqual('var(--font-serif)')
+  })
 })
