@@ -5,7 +5,7 @@ This is a project based on the design file provided by the frontendmentor websit
 [Frontend Mentor Dictionary](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL).
 
 Dictionary production URL:
-https://dictionary-tau-three.vercel.app/
+https://dictionary-forguz.vercel.app/
 
 ## Technologies:
 
