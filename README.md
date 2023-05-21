@@ -4,6 +4,9 @@ This is a project based on the design file provided by the frontendmentor websit
 
 [Frontend Mentor Dictionary](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL).
 
+Dictionary production URL:
+https://dictionary-tau-three.vercel.app/
+
 ## Technologies:
 
 [![Typescript](https://img.shields.io/badge/-typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)![version](https://img.shields.io/badge/version-5.0.4-4FC72A?style=for-the-badge)
