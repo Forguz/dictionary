@@ -48,7 +48,11 @@ export function Select(): Atom {
 
   return (
     <div data-testid="select-container" className={styles.container}>
-      <button onClick={handleButtonClick} className={styles.labelButton}>
+      <button
+        aria-label="select-button"
+        onClick={handleButtonClick}
+        className={styles.labelButton}
+      >
         {selectedValue}
         <Image
           src="/chevron_down.svg"

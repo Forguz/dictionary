@@ -66,7 +66,7 @@ export function Search({ handleSearch }: Props): Atom {
       tabIndex={0}
     >
       <input ref={inputRef} placeholder="Search for any word…" type="text" />
-      <button onClick={onSearch}>
+      <button aria-label="search-button" onClick={onSearch}>
         {searching ? (
           <RotatingLines
             strokeColor="#A445ED"

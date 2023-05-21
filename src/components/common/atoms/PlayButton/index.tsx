@@ -11,7 +11,7 @@ interface Props {
 
 export function PlayButton({ isPlaying, onClick }: Props): Atom {
   return (
-    <button onClick={onClick} className={style.button}>
+    <button aria-label="play-button" onClick={onClick} className={style.button}>
       {isPlaying ? (
         <Audio width={13} height={13} color="#a445ed" />
       ) : (
