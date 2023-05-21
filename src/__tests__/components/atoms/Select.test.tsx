@@ -29,4 +29,18 @@ describe('Select', () => {
     expect(dropdown.classList.length).toEqual(2)
     expect(dropdown.className).toEqual('dropdownMenu showDropdownMenu')
   })
+
+  it('should change button value when listItem is clicked', () => {
+    const { getByRole, getAllByRole } = render(<Select />);
+
+    const button = getByRole('button')
+    fireEvent.click(button);
+
+    expect(button.textContent).toEqual('Sans serif')
+
+    const listItems = getAllByRole('listitem')
+    fireEvent.click(listItems[1])
+
+    expect(button.textContent).toEqual('Serif')
+  })
 })
