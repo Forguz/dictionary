@@ -94,6 +94,12 @@ body {
   padding: 24px;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    padding-block: 58px;
+  }
+}
+
 p {
   font-size: var(--paragraph-size);
   line-height: var(--paragraph-line-height);
